@@ -30,8 +30,7 @@ The system implements a multi-VPC secure connectivity model:
     ```bash
     terraform init
     terraform apply -auto-approve
-    
-```
+    ```
 
 ## Verification & Testing
 
@@ -41,8 +40,7 @@ To test the internal connectivity:
     ```bash
     awslocal ec2 describe-vpc-peering-connections
     aws ec2 describe-vpc-peering-connections
-    
-```
+    ```
     Confirm the \`Status\` is \`active\`.
 
 2.  **Check Routing Tables:**
@@ -50,15 +48,13 @@ To test the internal connectivity:
     ```bash
     awslocal ec2 describe-route-tables --filters "Name=vpc-id,Values=<REQUESTER_VPC_ID>"
     aws ec2 describe-route-tables --filters "Name=vpc-id,Values=<REQUESTER_VPC_ID>"
-    
-```
+    ```
 
 3.  **Inspect VPC Endpoint:**
     ```bash
     awslocal ec2 describe-vpc-endpoints
     aws ec2 describe-vpc-endpoints
-    
-```
+    ```
     Confirm the Secrets Manager endpoint is \`Available\`.
 
 ## Cleanup
